@@ -2,6 +2,7 @@
  * AETHERIA ARCADE - CYBER GAMING & REWARD ENGINE (v7.0.0 PRODUCTION)
  * - 100% Synced with Secured Cloudflare Worker & Firebase Database
  * - Realtime Mini-Arcade Tap Reflex System
+ * - 4-Way Admin Channel Management (Verify, Official, Proof, Support)
  * - Zero Direct Firebase Writes (Tamper-Proof Architecture)
  */
 
@@ -292,16 +293,18 @@ const translations = {
         tutorial_btn_title: "Arcade Training Video Guide",
         tutorial_btn_sub: "Learn gameplay tactics & prize redemption",
         btn_watch: "Watch",
-        menu_verify_channel: "Telegram Comms Sync",
+        menu_verify_channel: "Account Verify Channel",
+        menu_tg_official: "Official Channel",
+        menu_tg_proof: "Payment Proof Channel",
         verify_status_unverified: "● Unverified (Tasks Locked)",
-        verify_status_verified: "● Verified Comms (Active)",
+        verify_status_verified: "● Verified Channel (Active)",
         verify_badge_unverified: "Verify Now",
         verify_badge_verified: "Verified",
         verify_badge: "NETWORK COMMS SYNC",
-        verify_title: "Sync Official Comms Channel",
-        verify_desc: "You must link with our official Telegram comms to keep energy boosts and reward prize redemptions unlocked.",
-        btn_join_tg_channel: "Join Comms Channel",
-        btn_check_verify: "Confirm Comms Link",
+        verify_title: "Account Verification Channel",
+        verify_desc: "You must join our official Telegram verification channel to keep energy boosts and reward prize redemptions unlocked.",
+        btn_join_tg_channel: "Join Verify Channel",
+        btn_check_verify: "Confirm Membership",
         btn_close: "Dismiss",
         section_tasks_title: "Power Boosters & Sponsor Missions",
         section_tasks_sub: "Activate any booster to recharge your game credits",
@@ -376,8 +379,8 @@ const translations = {
         toast_already_claimed: "⚠️ Daily protocol gift already claimed today!",
         toast_claim_success: "🎉 Day {day} reward +{pts} credits claimed!",
         toast_link_copied: "✅ Recruitment link copied to clipboard!",
-        toast_verify_required: "⚠️ Comms link required! Join Telegram channel to activate.",
-        toast_verify_withdraw: "⚠️ You must synchronize official Telegram comms before prize redemption!",
+        toast_verify_required: "⚠️ Verification channel link required! Join Telegram channel to activate.",
+        toast_verify_withdraw: "⚠️ You must synchronize official Telegram verify channel before prize redemption!",
         toast_verify_success: "🎉 Comms link verified! Missions & Vault unlocked.",
         toast_already_verified: "✅ Pilot comms already verified!",
         toast_verifying_membership: "⏳ Verifying official comms link...",
@@ -403,7 +406,7 @@ const translations = {
         welcome_badge: "পাইলট এয়ারড্রপ",
         welcome_title: "এয়ারড্রপ রিওয়ার্ড আনলকড!",
         welcome_desc_1: "আর্কেড নেটওয়ার্কে প্রথম যোগদানের জন্য আপনি পেয়েছেন",
-        welcome_desc_2: "পয়েন্ট ক্রিপ্টো এনার্জি ক্রেডিট!",
+        welcome_desc_2: "পয়েন্ট ক্রিপ্টো এনার্জি ক্রেডিট!",
         btn_claim_welcome: "ক্লেইম এনার্জি ক্রেডিট",
         user_status: "● ভেরিফাইড অপারেটর",
         wallet_balance_label: "টোটাল পাওয়ার ক্রেডিট",
@@ -412,15 +415,17 @@ const translations = {
         tutorial_btn_title: "আর্কেড ট্রেনিং ভিডিও গাইড",
         tutorial_btn_sub: "হাই-স্কোর ও সঠিক রিওয়ার্ড নেওয়ার নিয়ম দেখুন",
         btn_watch: "ভিডিও",
-        menu_verify_channel: "টেলিগ্রাম চ্যানেল ভেরিফিকেশন",
+        menu_verify_channel: "অ্যাকাউন্ট ভেরিফাই চ্যানেল",
+        menu_tg_official: "অফিসিয়াল চ্যানেল",
+        menu_tg_proof: "পেমেন্ট প্রুফ চ্যানেল",
         verify_status_unverified: "● আনভেরিফাইড (টাস্ক ব্লক)",
         verify_status_verified: "● ভেরিফাইড চ্যানেল (সক্রিয়)",
         verify_badge_unverified: "ভেরিফাই করুন",
         verify_badge_verified: "ভেরিফাইড",
         verify_badge: "নেটওয়ার্ক কমস সিঙ্ক",
-        verify_title: "অফিসিয়াল কমস লিংক সিঙ্ক",
-        verify_desc: "গেমিং টাস্ক, আর্কেড রেটিং এবং ওয়ালেট উত্তোলন সচল রাখতে আমাদের টেলিগ্রাম কমিউনিটিতে সিঙ্ক থাকা আবশ্যক।",
-        btn_join_tg_channel: "কমিউনিটিতে যুক্ত হোন",
+        verify_title: "অ্যাকাউন্ট ভেরিফিকেশন চ্যানেল",
+        verify_desc: "গেমিং টাস্ক, আর্কেড রেটিং এবং ওয়ালেট উত্তোলন সচল রাখতে আমাদের টেলিগ্রাম ভেরিফিকেশন চ্যানেলে যুক্ত থাকা বাধ্যতামূলক।",
+        btn_join_tg_channel: "ভেরিফিকেশন চ্যানেলে যুক্ত হোন",
         btn_check_verify: "ভেরিফিকেশন চেক করুন",
         btn_close: "পরে করব",
         section_tasks_title: "পাওয়ার বুস্টার ও স্পনসর মিশন",
@@ -496,11 +501,11 @@ const translations = {
         toast_already_claimed: "⚠️ আজকের প্রটোকল গিফট ইতিমধ্যে নেওয়া হয়েছে!",
         toast_claim_success: "🎉 দিন {day}-এর উপহার +{pts} ক্রেডিট যুক্ত হয়েছে!",
         toast_link_copied: "✅ রিক্রুটমেন্ট লিংক ক্লিপবোর্ডে কপি হয়েছে!",
-        toast_verify_required: "⚠️ অফিসিয়াল টেলিগ্রাম চ্যানেলে জয়েন করে ভেরিফাই করুন!",
-        toast_verify_withdraw: "⚠️ প্রাইজ রিডিম করতে টেলিগ্রাম কমস ভেরিফিকেশন সম্পন্ন করুন!",
+        toast_verify_required: "⚠️ ভেরিফিকেশন চ্যানেলে জয়েন করে ভেরিফাই করুন!",
+        toast_verify_withdraw: "⚠️ প্রাইজ রিডিম করতে টেলিগ্রাম ভেরিফিকেশন সম্পন্ন করুন!",
         toast_verify_success: "🎉 মেম্বারশিপ নিশ্চিত হয়েছে! আর্কেড বুস্টার সক্রিয়।",
         toast_already_verified: "✅ পাইলট কমস ইতিমধ্যে ভেরিফাইড!",
-        toast_verifying_membership: "⏳ কমস লিংক সার্ভার যাচাই করা হচ্ছে...",
+        toast_verifying_membership: "⏳ চ্যানেল সার্ভার যাচাই করা হচ্ছে...",
         checkin_day_text: "দিন {day}",
         checkin_streak_text: "বর্তমান স্ট্রিক: {day} দিন",
         checkin_claimed_btn: "✅ আজকের গিফট নেওয়া হয়েছে",
@@ -617,7 +622,12 @@ let requiredRefAds = 3;
 const checkInRewards = [2, 3, 5, 10, 15, 20, 50];
 
 let tutorialVideoUrl = "https://www.youtube.com"; 
-let telegramChannelUrl = "https://t.me/";
+
+// ৪টি অ্যাডমিন চ্যানেল ও সাপোর্ট লিঙ্ক ভেরিয়েবল
+let officialTelegramChannelUrl = "https://t.me/";
+let verifyTelegramChannelUrl = "https://t.me/";
+let proofTelegramChannelUrl = "https://t.me/";
+let supportTelegramUrl = "https://t.me/";
 
 let pointsToBdtRate = 0.10;
 let referralBonusPoints = 50;
@@ -655,6 +665,15 @@ function escapeHtml(str) {
     return String(str ?? '').replace(/[&<>"']/g, c => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     })[c]);
+}
+
+function normalizeTelegramUrl(rawUrl, defaultFallback = "https://t.me/") {
+    if (!rawUrl) return defaultFallback;
+    let formatted = String(rawUrl).trim();
+    if (formatted.startsWith('http://') || formatted.startsWith('https://')) {
+        return formatted;
+    }
+    return `https://t.me/${formatted.replace('@', '')}`;
 }
 
 function getReferrerId() {
@@ -703,7 +722,7 @@ function getMonetagFunction() {
     return null;
 }
 
-// ================= ১০. ফায়ারবেস সেটিংস সিঙ্ক =================
+// ================= ১০. ফায়ারবেস সেটিংস সিঙ্ক (৪টি চ্যানেল ও অন্যান্য) =================
 db.ref('settings').on('value', (snapshot) => {
     const data = snapshot.val() || {};
 
@@ -711,17 +730,30 @@ db.ref('settings').on('value', (snapshot) => {
         tutorialVideoUrl = data.tutorialVideoUrl || data.tutorialUrl || data.youtubeTutorial;
     }
 
-    if (data.telegramChannel) {
-        telegramChannelUrl = data.telegramChannel.startsWith('http') 
-            ? data.telegramChannel 
-            : `https://t.me/${data.telegramChannel.replace('@', '')}`;
-    }
-
-    const joinBtn = document.getElementById('btn-verify-join-tg');
-    if (joinBtn) joinBtn.href = telegramChannelUrl;
-
+    // ১. অফিসিয়াল চ্যানেল (Official Channel)
+    const rawOfficial = data.officialTelegramChannel || data.officialChannel || data.telegramChannel || data.channelUrl;
+    officialTelegramChannelUrl = normalizeTelegramUrl(rawOfficial);
     const channelLinkEl = document.getElementById('telegram-channel-link');
-    if (channelLinkEl) channelLinkEl.href = telegramChannelUrl;
+    if (channelLinkEl) channelLinkEl.href = officialTelegramChannelUrl;
+
+    // ২. অ্যাকাউন্ট ভেরিফিকেশন চ্যানেল (Account Verify Channel)
+    const rawVerify = data.verifyTelegramChannel || data.verifyChannel || data.telegramVerifyChannel || data.telegramChannel;
+    verifyTelegramChannelUrl = normalizeTelegramUrl(rawVerify);
+    const joinBtn = document.getElementById('btn-verify-join-tg');
+    if (joinBtn) joinBtn.href = verifyTelegramChannelUrl;
+
+    // ৩. পেমেন্ট প্রুফ চ্যানেল (Payment Proof Channel)
+    const rawProof = data.paymentProofChannel || data.proofChannel || data.telegramProofChannel || data.proofUrl;
+    proofTelegramChannelUrl = normalizeTelegramUrl(rawProof);
+    const proofLinkEl = document.getElementById('telegram-proof-link');
+    if (proofLinkEl) proofLinkEl.href = proofTelegramChannelUrl;
+
+    // ৪. ২৪/৭ সাপোর্ট লিংক (Support Link)
+    const activeBotUser = (data.botUsername || DEFAULT_BOT_USERNAME).replace('@', '').trim();
+    const rawSupport = data.supportUrl || data.telegramSupport || data.supportTelegram || (data.botUsername ? `https://t.me/${activeBotUser}?start=support` : 'https://t.me/');
+    supportTelegramUrl = normalizeTelegramUrl(rawSupport);
+    const supportLinkEl = document.getElementById('telegram-support-link');
+    if (supportLinkEl) supportLinkEl.href = supportTelegramUrl;
 
     if (data.adsterraWaitTime || data.directLinkTimer) {
         requiredSponsorTime = Number(data.adsterraWaitTime || data.directLinkTimer || 15);
@@ -768,17 +800,12 @@ db.ref('settings').on('value', (snapshot) => {
 
     injectMonetagScript(netConfigs.monetag.zoneId);
 
-    const activeBotUser = (data.botUsername || DEFAULT_BOT_USERNAME).replace('@', '').trim();
     myReferralLink = data.appShortName 
         ? `https://t.me/${activeBotUser}/${data.appShortName}?startapp=ref_${userId}`
         : `https://t.me/${activeBotUser}?start=ref_${userId}`;
 
     const refDisplay = document.getElementById('referral-link-display');
     if (refDisplay) refDisplay.innerText = myReferralLink;
-
-    const supportLinkEl = document.getElementById('telegram-support-link');
-    const supportUrl = data.supportUrl || data.telegramSupport || (data.botUsername ? `https://t.me/${activeBotUser}?start=support` : 'https://t.me/');
-    if (supportLinkEl) supportLinkEl.href = supportUrl.startsWith('http') ? supportUrl : `https://t.me/${supportUrl.replace('@', '')}`;
 
     document.querySelectorAll('.reward-monetag-val').forEach(el => el.innerText = formatNum(netConfigs.monetag.reward));
     document.querySelectorAll('.reward-adsgram-val').forEach(el => el.innerText = formatNum(netConfigs.adsgram.reward));
@@ -866,7 +893,7 @@ async function initUser() {
 function handleArcadeTap(e) {
     if (isUserBanned) return;
     const now = Date.now();
-    if (now - arcadeLastTapTime < 100) return; // স্প্যাম প্রিভেনশন
+    if (now - arcadeLastTapTime < 100) return; 
     arcadeLastTapTime = now;
 
     playTapArcadeSound();
@@ -879,10 +906,8 @@ function handleArcadeTap(e) {
         setTimeout(() => { node.style.transform = 'scale(1)'; }, 100);
     }
 
-    // স্ক্রিনে ফ্লোটিং স্পার্ক / প্লাস টেক্সট তৈরি
     createTapSpark(e);
 
-    // প্রতি ২০টি সফল ট্যাপে কম্বো রিফিল বুস্ট নোটিফিকেশন
     if (arcadeComboCounter % 20 === 0) {
         triggerHaptic('notification_success');
         showToast(currentLang === 'bn' ? `⚡ দারুণ রিফ্লেক্স! ${formatNum(arcadeComboCounter)} কম্বো চার্জড!` : `⚡ Reflex Combo! ${arcadeComboCounter} Charges!`);
@@ -1081,7 +1106,7 @@ function openChannelVerifyModal() {
     playClickSound();
     triggerHaptic('light');
     const joinBtn = document.getElementById('btn-verify-join-tg');
-    if (joinBtn) joinBtn.href = telegramChannelUrl;
+    if (joinBtn) joinBtn.href = verifyTelegramChannelUrl;
 
     const modal = document.getElementById('channel-verify-modal');
     if (modal) {

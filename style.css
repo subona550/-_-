@@ -106,6 +106,11 @@ input, select, textarea {
 .text-danger { color: var(--neon-alert) !important; }
 .text-success { color: var(--neon-emerald) !important; }
 
+/* Neon Glow Helper Effects */
+.neon-glow { box-shadow: 0 8px 32px var(--neon-cyan-soft); }
+.neon-emerald-glow { box-shadow: 0 8px 32px var(--neon-emerald-soft); }
+.neon-purple-glow { box-shadow: 0 8px 32px var(--neon-purple-soft); }
+
 /* ================= 1. CYBER BOOT LOADER (SPLASH) ================= */
 .cyber-boot-screen {
     position: fixed;
@@ -1009,6 +1014,18 @@ input, select, textarea {
     box-shadow: 0 0 22px var(--neon-cyan-soft);
 }
 
+.dossier-status-pulse {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--neon-emerald);
+    border: 2px solid var(--card-surface);
+    box-shadow: 0 0 10px var(--neon-emerald);
+}
+
 .pilot-identity-name { font-size: 21px; font-weight: 900; }
 .pilot-telegram-tag { font-size: 14px; color: var(--text-muted); display: block; margin-top: 4px; }
 .pilot-terminal-uuid {
@@ -1053,25 +1070,36 @@ input, select, textarea {
     cursor: pointer;
     text-decoration: none;
     color: var(--text-primary);
+    transition: opacity 0.15s ease;
+}
+
+.dock-action-row:active {
+    opacity: 0.8;
 }
 
 .dock-action-row:last-child { border-bottom: none; }
 .dock-left-cell { display: flex; align-items: center; gap: 14px; }
 
 .dock-icon-box {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 12px;
     background: var(--chip-bg);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--neon-cyan);
+    flex-shrink: 0;
+}
+
+.comms-icon-bg {
+    background: rgba(0, 136, 204, 0.14) !important;
+    color: #0088cc !important;
 }
 
 .dock-title { font-size: 15.5px; font-weight: 800; display: block; }
 .dock-desc { font-size: 12px; font-weight: 700; display: block; margin-top: 2px; }
-.chevron-arrow { color: var(--text-muted); }
+.chevron-arrow { color: var(--text-muted); flex-shrink: 0; }
 
 .cyber-footer-tag {
     text-align: center;
@@ -1450,6 +1478,39 @@ input, select, textarea {
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
 }
 
+.neon-border {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 24px var(--neon-cyan-soft);
+}
+
+.comms-border {
+    border-color: #0088cc;
+    box-shadow: 0 0 24px rgba(0, 136, 204, 0.28);
+}
+
+.comms-badge {
+    color: #0088cc !important;
+}
+
+.comms-color {
+    color: #0088cc !important;
+}
+
+.vault-border {
+    border-color: var(--neon-emerald);
+    box-shadow: 0 0 24px var(--neon-emerald-soft);
+}
+
+.vault-badge {
+    color: var(--neon-emerald) !important;
+}
+
+.status-pending {
+    background: rgba(255, 184, 0, 0.12);
+    color: var(--neon-warning);
+    border: 1px solid rgba(255, 184, 0, 0.3);
+}
+
 .quarantine-border { border-color: var(--neon-alert); }
 .quarantine-symbol {
     width: 68px;
@@ -1491,6 +1552,12 @@ input, select, textarea {
 
 .modal-title { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
 .modal-subtext { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 22px; line-height: 1.5; }
+
+.action-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 /* Receipt Terminal Box */
 .receipt-pulse-ring {
@@ -1539,6 +1606,7 @@ input, select, textarea {
 
 .t-muted { color: var(--text-secondary); }
 .t-light { color: var(--text-primary); }
+.t-highlight { color: var(--neon-cyan); }
 
 /* ================= 13. HUD BOTTOM NAV ================= */
 .cyber-hud-nav {

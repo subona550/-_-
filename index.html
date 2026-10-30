@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <!-- Telegram Comms Link Verification Modal -->
+    <!-- Telegram Account Verification Modal (অ্যাকাউন্ট ভেরিফাই চ্যানেল) -->
     <div id="channel-verify-modal" class="cyber-modal-overlay" onclick="closeChannelVerifyModal()">
         <div class="cyber-modal-box comms-border" onclick="event.stopPropagation()">
             <div class="modal-tag-badge comms-badge" data-i18n="verify_badge">NETWORK COMMS SYNC</div>
@@ -96,15 +96,15 @@
                     <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
                 </svg>
             </div>
-            <h3 class="modal-title" data-i18n="verify_title">অফিসিয়াল কমস লিংক সিঙ্ক</h3>
+            <h3 class="modal-title" data-i18n="verify_title">অ্যাকাউন্ট ভেরিফিকেশন চ্যানেল</h3>
             <p class="modal-subtext" data-i18n="verify_desc">
-                গেমিং টাস্ক, আর্কেড রেটিং এবং ওয়ালেট উত্তোলন সচল রাখতে আমাদের টেলিগ্রাম কমিউনিটিতে সিঙ্ক থাকা আবশ্যক।
+                গেমিং টাস্ক, আর্কেড রেটিং এবং ওয়ালেট উত্তোলন সচল রাখতে আমাদের টেলিগ্রাম ভেরিফিকেশন চ্যানেলে যুক্ত থাকা বাধ্যতামূলক।
             </p>
             
             <div class="action-stack">
                 <a id="btn-verify-join-tg" href="#" target="_blank" rel="noopener noreferrer" class="cyber-btn comms-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
-                    <span data-i18n="btn_join_tg_channel">কমিউনিটিতে যুক্ত হোন</span>
+                    <span data-i18n="btn_join_tg_channel">ভেরিফিকেশন চ্যানেলে যুক্ত হোন</span>
                 </a>
                 <button type="button" class="cyber-btn primary-glow" id="btn-check-tg-verify" onclick="checkTelegramVerification()">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
@@ -519,9 +519,10 @@
                 </div>
             </div>
 
-            <!-- Tactical Setting & Info Rows -->
+            <!-- Tactical Setting & Official Channel Link Rows -->
             <div class="bento-box action-list-dock">
                 
+                <!-- ১. অ্যাকাউন্ট ভেরিফিকেশন চ্যানেল (Account Verify Channel) -->
                 <div class="dock-action-row" onclick="openChannelVerifyModal()">
                     <div class="dock-left-cell">
                         <div class="dock-icon-box comms-icon-bg">
@@ -531,13 +532,64 @@
                             </svg>
                         </div>
                         <div>
-                            <span class="dock-title" data-i18n="menu_verify_channel">টেলিগ্রাম চ্যানেল ভেরিফিকেশন</span>
+                            <span class="dock-title" data-i18n="menu_verify_channel">অ্যাকাউন্ট ভেরিফাই চ্যানেল</span>
                             <small id="profile-verify-status-text" class="dock-desc text-danger">● আনভেরিফাইড (টাস্ক ব্লক)</small>
                         </div>
                     </div>
                     <span id="profile-verify-badge" class="cyber-chip chip-danger">ভেরিফাই করুন</span>
                 </div>
 
+                <!-- ২. অফিসিয়াল চ্যানেল (Official Channel) -->
+                <a id="telegram-channel-link" href="#" target="_blank" rel="noopener noreferrer" class="dock-action-row">
+                    <div class="dock-left-cell">
+                        <div class="dock-icon-box" style="color: var(--neon-cyan);">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="dock-title" data-i18n="menu_tg_official">অফিসিয়াল চ্যানেল</span>
+                            <small class="dock-desc text-muted">সর্বশেষ আপডেট ও অফার নোটিশ</small>
+                        </div>
+                    </div>
+                    <svg class="chevron-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+
+                <!-- ৩. পেমেন্ট প্রুফ চ্যানেল (Payment Proof Channel) -->
+                <a id="telegram-proof-link" href="#" target="_blank" rel="noopener noreferrer" class="dock-action-row">
+                    <div class="dock-left-cell">
+                        <div class="dock-icon-box" style="color: var(--neon-emerald);">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="6" width="20" height="12" rx="2"/>
+                                <circle cx="12" cy="12" r="2"/>
+                                <path d="M6 12h.01M18 12h.01"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="dock-title" data-i18n="menu_tg_proof">পেমেন্ট প্রুফ চ্যানেল</span>
+                            <small class="dock-desc text-success">● লাইভ পেআউট প্রমাণসমূহ</small>
+                        </div>
+                    </div>
+                    <svg class="chevron-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+
+                <!-- ৪. ২৪/৭ পাইলট সাপোর্ট হেল্পডেস্ক লিংক (Support Link) -->
+                <a id="telegram-support-link" href="#" target="_blank" rel="noopener noreferrer" class="dock-action-row">
+                    <div class="dock-left-cell">
+                        <div class="dock-icon-box" style="color: var(--neon-purple);">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="dock-title" data-i18n="menu_support">২৪/৭ পাইলট সাপোর্ট ডেস্ক</span>
+                            <small class="dock-desc text-muted">সরাসরি অ্যাডমিন সাপোর্ট সহায়তা</small>
+                        </div>
+                    </div>
+                    <svg class="chevron-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+
+                <!-- পেআউট লগ হিস্ট্রি -->
                 <div class="dock-action-row" onclick="openWithdrawHistory()">
                     <div class="dock-left-cell">
                         <div class="dock-icon-box">
@@ -548,6 +600,7 @@
                     <svg class="chevron-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </div>
 
+                <!-- ৭-দিনের স্ট্রিক ভল্ট -->
                 <div class="dock-action-row" onclick="openCheckInFullView()">
                     <div class="dock-left-cell">
                         <div class="dock-icon-box">
@@ -558,25 +611,6 @@
                     <svg class="chevron-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </div>
 
-                <a id="telegram-support-link" href="#" target="_blank" rel="noopener noreferrer" class="dock-action-row">
-                    <div class="dock-left-cell">
-                        <div class="dock-icon-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                        </div>
-                        <span class="dock-title" data-i18n="menu_support">২৪/৭ পাইলট সাপোর্ট ডেস্ক</span>
-                    </div>
-                    <svg class="chevron-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-
-                <a id="telegram-channel-link" href="#" target="_blank" rel="noopener noreferrer" class="dock-action-row">
-                    <div class="dock-left-cell">
-                        <div class="dock-icon-box">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
-                        </div>
-                        <span class="dock-title" data-i18n="menu_tg_support">অফিসিয়াল টেলিগ্রাম কমস</span>
-                    </div>
-                    <svg class="chevron-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
             </div>
 
             <!-- Footer Compliance Caption -->
